@@ -13,7 +13,7 @@ def say(text, voice_id = 0):
     speaker = win32com.client.Dispatch(f"Sapi.SpVoice")   #it loads the Windows speech engine, Prepares it to speak
     voices = speaker.GetVoices()                          #get the diff voices
     speaker.Voice = voices.Item(voice_id)                 #Choose voice
-    speaker.rate = 1.8
+    speaker.rate = 1
     speaker.Speak(text)                                   #speak the text out loud.
 
 #Taking command
@@ -93,6 +93,7 @@ if __name__ == '__main__':
         if "exit" in query or "stop" in query or "sign off" in query or "quit" in query:
             say("Signing off")
             exit()
+
 
 
 
